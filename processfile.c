@@ -7,7 +7,7 @@
 int processfile (char *filename)
 {
 	char line[50];
-	File *file;
+	FILE *file;
 	int i = 1;
 	char **processedline;
 
@@ -15,12 +15,12 @@ int processfile (char *filename)
 	if (file == NULL)
 	{
 		printf("Error: Can't open file %s", filename);
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		processedline = tokenise(line);
-		if (processedline[0] == "push")
+		if (strcmp(processedline[0], "push") == 0)
 			handlepush(processedline, i);
 		handleOpcode(processedline, i);
 		i++;
