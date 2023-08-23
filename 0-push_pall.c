@@ -84,5 +84,6 @@ int is_integer(const char *str)
 instruction_t opcodes[] = {
 	{"push", pushNode},
 	{"pall", pallStack},
+	{"pint", pintStack},
 	{NULL, NULL}
 };
