@@ -6,7 +6,7 @@
  */
 int processfile (char *filename)
 {
-	char *line;
+	char line[50];
 	File *file;
 	int i = 1;
 	char **processedline;
@@ -20,5 +20,11 @@ int processfile (char *filename)
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		processedline = tokenise(line);
-		handleOpcode(processedline);
-
+		if (processedline[0] == "push")
+			handlepush(processedline, i);
+		handleOpcode(processedline, i);
+		i++;
+	}
+	fclose(filename);
+	return (0);
+}

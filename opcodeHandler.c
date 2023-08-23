@@ -6,19 +6,21 @@
 void handleOpcode (char **processedline, int linenumber)
 {
 	int i;
-	stack_t node;
+	stack_t *node = NULL;
 
 	instruction_t instruct[] = {
-		{ "push", pushStack},
 		{ "pall", pallStack},
 		{ "pop", popStack},
 		{ "swap", swapStack},
 		{ "add", addStack},
 		{ "nop", nopStack},
 		{ NULL, NULL}
-	};
+	}; 
 	while (instruct[i].opcode =! NULL)
 	{
 		if (strcmp(processedline[0], instruct[i].opcode) == 0)
-		{
-
+			instruct[i].f(node, linenumber);
+		i++;
+	}
+}
+			

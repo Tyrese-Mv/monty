@@ -5,7 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 int processfile (char *filename);
-char **tokenise(char *str);
+char **tokenise (char *str);
+void handleOpcode (char **processedline, int linenumber);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		perror("USAGE: monty file");
+		printf("USAGE: monty file");
 		return (EXIT_FAILURE);
 	}
+	return (0)
 }
