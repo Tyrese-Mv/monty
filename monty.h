@@ -1,15 +1,15 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* C - library functions */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int processfile(char *filename);
-char **tokenise(char *str);
-void newStack(firstNode *stack);
-void handleOpcode(char **processedline, int linenumber);
-void pushOpcode(stack_t **stack, int linenumber, int data);
+#include <ctype.h>
 
+
+/* Data structure */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -26,15 +26,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-/**
- * struct Stack - head of the stack
- * @head: head of the stack;
- *
- * Description: initialises the head as empty
- */ 
-typedef struct Stack{
-	struct stack_t *head;
-}firstNode;
+
 
 /**
  * struct instruction_s - opcode and its function
@@ -48,5 +40,13 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+extern instruction_t opcodes[];
+
+/* Function Prototypes */
+void check_open_file(FILE *file, char **argv);
+void pushNode(stack_t **stack, unsigned int line_number);
+void pallStack(stack_t **stack, unsigned int line_number);
+int is_integer(const char *str);
 
 #endif
