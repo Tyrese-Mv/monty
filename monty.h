@@ -4,9 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int processfile (char *filename);
-char **tokenise (char *str);
-void handleOpcode (char **processedline, int linenumber);
+int processfile(char *filename);
+char **tokenise(char *str);
+void newStack(firstNode *stack);
+void handleOpcode(char **processedline, int linenumber);
+void pushOpcode(stack_t **stack, int linenumber, int data);
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -23,7 +26,15 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-
+/**
+ * struct Stack - head of the stack
+ * @head: head of the stack;
+ *
+ * Description: initialises the head as empty
+ */ 
+typedef struct Stack{
+	struct stack_t *head;
+}firstNode;
 
 /**
  * struct instruction_s - opcode and its function

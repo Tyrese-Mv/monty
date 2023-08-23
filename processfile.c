@@ -28,3 +28,11 @@ int processfile (char *filename)
 	fclose(filename);
 	return (0);
 }
+
+/**
+ * newStack - initialises a new stack
+ * @stack: head node
+ *
+void newStack(firstNode *stack)
+{
+	stack->top = NULL;*/

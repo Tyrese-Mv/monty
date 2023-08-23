@@ -6,4 +6,7 @@
  */
 void handlepush (char **processedline, int linenumber)
 {
-	
+	/**assume that processedline[1] is a number*/
+	/**need to have a global variable for stack*/
+	pushOpcode(&stack, linenumber, processedline[1]);
+}
