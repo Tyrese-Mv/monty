@@ -89,5 +89,6 @@ instruction_t opcodes[] = {
 	{"swap", swapStack},
 	{"add", addStack},
 	{"nop", nopStack},
+	{"sub", subStack},
 	{NULL, NULL}
 };
