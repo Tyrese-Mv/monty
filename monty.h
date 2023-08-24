@@ -49,6 +49,7 @@ void pushNode(stack_t **stack, unsigned int line_number);
 void pallStack(stack_t **stack, unsigned int line_number);
 void pintStack(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **stack, unsigned int line_number);
+void swapStack(stack_t **stack, unsigned int line_number);
 int is_integer(const char *str);
 
 #endif
