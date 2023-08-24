@@ -85,5 +85,6 @@ instruction_t opcodes[] = {
 	{"push", pushNode},
 	{"pall", pallStack},
 	{"pint", pintStack},
+	{"pop", popStack},
 	{NULL, NULL}
 };
