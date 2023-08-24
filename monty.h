@@ -54,6 +54,7 @@ void addStack(stack_t **stack, unsigned int line_number);
 void nopStack(stack_t **stack, unsigned int line_number);
 void subStack(stack_t **stack, unsigned int line_number);
 void divStack(stack_t **stack, unsigned int line_number);
+void mulStack(stack_t **stack, unsigned int line_number);
 int is_integer(const char *str);
 
 #endif
