@@ -2,7 +2,7 @@
 /**
  * subStack - subtracts top to nodes and make the result a head
  * @stack: the stack to manipulate
- * @linenumber: line number of the opcode
+ * @line_number: line number of the opcode
  */
 void subStack(stack_t **stack, unsigned int line_number)
 {

@@ -2,7 +2,7 @@
 /**
  * divStack - divides top two nodes and make the result a head
  * @stack: the stack to manipulate
- * @linenumber: line number of the opcode
+ * @line_number: line number of the opcode
  */
 void divStack(stack_t **stack, unsigned int line_number)
 {

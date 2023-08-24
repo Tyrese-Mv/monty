@@ -2,7 +2,7 @@
 /**
  * swapStack - swap top two elements in the stack
  * @stack: the stack to manipulate
- * @linenumber: line number of the opcode
+ * @line_number: line number of the opcode
  */
 void swapStack(stack_t **stack, unsigned int line_number)
 {
@@ -13,7 +13,7 @@ void swapStack(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	num1 = (*stack)->n;
 	num2 = (*stack)->next->n;
 

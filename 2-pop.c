@@ -2,7 +2,7 @@
 /**
  * popStack - removes the top element of the stack
  * @stack: the stack to manipulate
- * @linenumber: line number of the opcode
+ * @line_number: line number of the opcode
  */
 void popStack(stack_t **stack, unsigned int line_number)
 {

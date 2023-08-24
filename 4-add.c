@@ -2,12 +2,12 @@
 /**
  * addStack - adds top to nodes and make the result a head
  * @stack: the stack to manipulate
- * @linenumber: line number of the opcode
+ * @line_number: line number of the opcode
  */
 void addStack(stack_t **stack, unsigned int line_number)
 {
 	int num2, num1, res;
-	
+
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
