@@ -95,5 +95,6 @@ instruction_t opcodes[] = {
 	{"mod", modStack},
 	{"pchar", pcharStack},
 	{"pstr", pstrStack},
+	{"rotl", rotlStack},
 	{NULL, NULL}
 };
