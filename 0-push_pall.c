@@ -87,5 +87,6 @@ instruction_t opcodes[] = {
 	{"pint", pintStack},
 	{"pop", popStack},
 	{"swap", swapStack},
+	{"add", addStack},
 	{NULL, NULL}
 };
