@@ -4,7 +4,7 @@ push 3
 push 15
 push 10
 pall
-sub
+div
 pall
 add
 pall
