@@ -51,6 +51,7 @@ void pintStack(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **stack, unsigned int line_number);
 void swapStack(stack_t **stack, unsigned int line_number);
 void addStack(stack_t **stack, unsigned int line_number);
+void nopStack(stack_t **stack, unsigned int line_number);
 int is_integer(const char *str);
 
 #endif
