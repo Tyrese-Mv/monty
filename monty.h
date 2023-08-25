@@ -60,5 +60,5 @@ void pcharStack(stack_t **stack, unsigned int line_number);
 void pstrStack(stack_t **stack, unsigned int line_number);
 void rotlStack(stack_t **stack, unsigned int line_number);
 int is_integer(const char *str);
-
+void free_stack(stack_t *stack);
 #endif
