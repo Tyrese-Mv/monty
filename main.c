@@ -1,5 +1,5 @@
 #include "monty.h"
-
+void check_argc(int argc);
 /**
  * main - Entry point
  * @argv: arguments
@@ -9,22 +9,23 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	char *opcode;
+	char *opcode, *trimmed_line;
 	char line[1024];
 	unsigned int line_number = 0;
 	int i;
 	stack_t *stack = NULL;
 
-	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+	check_argc(argc);
 	file = fopen(argv[1], "r");
 	check_open_file(file, argv);
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		line_number++;
+		trimmed_line = line;
+		while (isspace((unsigned char)*trimmed_line))
+			trimmed_line++;
+		if (*trimmed_line == '#' || *trimmed_line == '\n')
+			continue;
 		opcode = strtok(line, " \t\n");
 		if (opcode)
 		{
@@ -47,6 +48,8 @@ int main(int argc, char *argv[])
 		}
 	}
 	fclose(file);
+	free_stack(stack);
+	stack = NULL;
 	return (0);
 }
 
@@ -63,6 +66,22 @@ void check_open_file(FILE *file, char **argv)
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/**
+* check_argc - checks the number of args if not 2
+* @argc: argument count
+*
+* Return: void
+*/
+
+void check_argc(int argc)
+{
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 }
