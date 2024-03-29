@@ -38,3 +38,12 @@ void pushNode(stack_t **stack, unsigned int line_number)
 
 	*stack = new_node;
 }
+instruction_t opcodes[] = {
+	{"push", pushNode},
+	{"pall", pallStack},
+	{"pint", pintStack},
+	{"pop", popStack},
+	{"swap", swapStack},
+	{"add", addStack},
+	{NULL, NULL}
+};
