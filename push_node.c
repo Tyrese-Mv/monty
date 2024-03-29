@@ -15,7 +15,7 @@ void pushNode(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 
 	opcode = strtok(NULL, " \t\n");
-	if (opcode == NULL)
+	if (opcode == NULL || !is_integer(opcode))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -39,3 +39,21 @@ void pushNode(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 }
 
+/**
+* is_integer - checks if the string is a number
+* @str: string
+*
+* Return: 1 if number else 0
+*/
+
+int is_integer(const char *str)
+{
+	char *endptr;
+
+	if (str == NULL || *str == '\0' || isspace(*str))
+		return (0);
+
+	strtol(str, &endptr, 10);
+
+	return (*endptr == '\0');
+}
