@@ -6,7 +6,7 @@
  * Return: Stack
 */
 
-stack_t readFile(FILE *file, stack_t **stack)
+void readFile(FILE *file, stack_t **stack)
 {
     char *opcode; 
     char line[1024];
@@ -24,7 +24,7 @@ stack_t readFile(FILE *file, stack_t **stack)
             {
                 if (strcmp(opcode, opcodes[i].opcode) == 0)
                 {
-                    opcodes[i].f(&stack, num_line);
+                    opcodes[i].f(stack, num_line);
                     break;
                 }
                 i++;
@@ -37,6 +37,4 @@ stack_t readFile(FILE *file, stack_t **stack)
             }
         }
     }
-
-    return (**stack);
 }
