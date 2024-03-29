@@ -16,7 +16,7 @@ void readFile(FILE *file, stack_t **stack)
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		num_line++;
-        spaces = line;
+		spaces = line;
 		while (isspace((unsigned char)*spaces))
 			spaces++;
 		if (*spaces == '#' || *spaces == '\n')
@@ -51,5 +51,14 @@ instruction_t opcodes[] = {
 	{"pop", popStack},
 	{"swap", swapStack},
 	{"add", addStack},
+	{"nop", nopStack},
+	{"sub", subStack},
+	{"div", divStack},
+	{"mul", mulStack},
+	{"mod", modStack},
+	{"pchar", pcharStack},
+	{"pstr", pstrStack},
+	{"rotl", rotlStack},
 	{NULL, NULL}
 };
+
