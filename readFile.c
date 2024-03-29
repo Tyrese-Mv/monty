@@ -39,3 +39,12 @@ void readFile(FILE *file, stack_t **stack)
 	}
 }
 
+instruction_t opcodes[] = {
+	{"push", pushNode},
+	{"pall", pallStack},
+	{"pint", pintStack},
+	{"pop", popStack},
+	{"swap", swapStack},
+	{"add", addStack},
+	{NULL, NULL}
+};
