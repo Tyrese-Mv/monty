@@ -53,6 +53,11 @@ void pcharStack(stack_t **stack, unsigned int line_number);
 void pstrStack(stack_t **stack, unsigned int line_number);
 void rotlStack(stack_t **stack, unsigned int line_number);
 
+
+
+
+
+stack_t readFile(FILE *file, stack_t **stack);
 instruction_t opcodes[] = {
 	{"push", pushNode},
 	{"pall", pallStack},
