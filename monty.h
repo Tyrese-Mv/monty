@@ -44,6 +44,14 @@ void pintStack(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **stack, unsigned int line_number);
 void swapStack(stack_t **stack, unsigned int line_number);
 void addStack(stack_t **stack, unsigned int line_number);
+void nopStack(stack_t **stack, unsigned int line_number);
+void subStack(stack_t **stack, unsigned int line_number);
+void divStack(stack_t **stack, unsigned int line_number);
+void mulStack(stack_t **stack, unsigned int line_number);
+void modStack(stack_t **stack, unsigned int line_number);
+void pcharStack(stack_t **stack, unsigned int line_number);
+void pstrStack(stack_t **stack, unsigned int line_number);
+void rotlStack(stack_t **stack, unsigned int line_number);
 
 
 
