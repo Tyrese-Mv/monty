@@ -44,36 +44,13 @@ void pintStack(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **stack, unsigned int line_number);
 void swapStack(stack_t **stack, unsigned int line_number);
 void addStack(stack_t **stack, unsigned int line_number);
-void nopStack(stack_t **stack, unsigned int line_number);
-void subStack(stack_t **stack, unsigned int line_number);
-void divStack(stack_t **stack, unsigned int line_number);
-void mulStack(stack_t **stack, unsigned int line_number);
-void modStack(stack_t **stack, unsigned int line_number);
-void pcharStack(stack_t **stack, unsigned int line_number);
-void pstrStack(stack_t **stack, unsigned int line_number);
-void rotlStack(stack_t **stack, unsigned int line_number);
 
 
 
 
 
-stack_t readFile(FILE *file, stack_t **stack);
-instruction_t opcodes[] = {
-	{"push", pushNode},
-	{"pall", pallStack},
-	{"pint", pintStack},
-	{"pop", popStack},
-	{"swap", swapStack},
-	{"add", addStack},
-	{"nop", nopStack},
-	{"sub", subStack},
-	{"div", divStack},
-	{"mul", mulStack},
-	{"mod", modStack},
-	{"pchar", pcharStack},
-	{"pstr", pstrStack},
-	{"rotl", rotlStack},
-	{NULL, NULL}
-};
+
+void readFile(FILE *file, stack_t **stack);
+extern instruction_t opcodes[];
 
 #endif
