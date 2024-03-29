@@ -22,3 +22,4 @@ void pallStack(stack_t **stack, unsigned int line_number)
 		current = current->next;
 	}
 }
+
