@@ -8,7 +8,7 @@
 
 void readFile(FILE *file, stack_t **stack)
 {
-	char *opcode;
+	char *opcode, *spaces;
 	char line[1024];
 	unsigned int num_line = 0;
 	int i;
@@ -16,6 +16,11 @@ void readFile(FILE *file, stack_t **stack)
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		num_line++;
+        spaces = line;
+		while (isspace((unsigned char)*spaces))
+			spaces++;
+		if (*spaces == '#' || *spaces == '\n')
+			continue;
 		opcode = strtok(line, " \t\n");
 		if (opcode != NULL)
 		{
